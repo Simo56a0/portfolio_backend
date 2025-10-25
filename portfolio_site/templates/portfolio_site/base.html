@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+     <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
+    <!-- site styles loaded above (styles.css / vendor.css) -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body id="top">
+    
+        <!-- Navigation (custom, matches screenshot) -->
+        <nav class="site-header">
+            <div class="row">
+                <div class="column xl-12">
+                    <div class="header-inner">
+                        <a href="{% url 'home' %}" class="logo" style="color:#ffa200;font-weight:600;font-size:1.3rem;letter-spacing:0.5px;">Horatio</a>
+                        <ul class="main-nav">
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'blog' %}">Journal</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                        <a href="{% url 'contact' %}" class="header-cta-btn">Let's Work Together</a>
+                        <button class="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="mobile-menu hidden">
+                <ul>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="{% url 'blog' %}">Journal</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="page" class="s-pagewrap ss-home"> 
+        
+
+        
+           
+               
+                        {% block content %}{% endblock %}
+                   
+            
+    
+        
+        </div>
+        <!-- Footer -->
+        <footer class="s-footer">
+            <div class="row">
+                <div class="column xl-4 md-12">
+                    <h5>About</h5>
+                    <p>A portfolio showcasing my work and services.</p>
+                </div>
+                <div class="column xl-4 md-12">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="column xl-4 md-12">
+                    <h5>Contact</h5>
+                    <p>Email: contact@example.com<br>Phone: (555) 123-4567</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column xl-12 text-center">
+                    <p>&copy; {% now "Y" %} Portfolio. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('#mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+    
+
+    {% block extra_js %}{% endblock %}
+    
+</body>
+</html>

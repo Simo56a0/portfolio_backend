@@ -1,0 +1,111 @@
+{% extends 'portfolio_site/base.html' %}
+{% load static %}
+
+{% block title %}Blog{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Featured Video Section -->
+<section class="s-pagecontent pagecontent">
+  
+  <div class="row pageintro">
+                        <div class="column xl-6 lg-12">
+                            <h2 class="text-display-title">Featured Video</h2>
+                             
+                        </div>
+                        <div class="column xl-6 lg-12 u-flexitem-x-right">
+                                            <video class="w-full h-full" controls>
+                            <source src="{% static 'videos/featured-video.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="mt-4 text-center text-gray-600">A short description of the video — what it covers and why it's useful.</p>
+                        </div>                       
+                    </div>
+</section>
+
+<section id="content" class="s-content">
+
+                <h1 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-8">Recent Writings</h1>
+
+               <section class="s-pagecontent pagecontent">
+
+                    <div class="row">
+                        <div class="column xl-12 grid-block">          
+        
+                            <!-- <div class="grid-full">         -->
+                                <div class="grid-full grid-list-items">
+                                    {% for post in posts %}
+                                    <div class="grid-list-items__item blog-card">
+                                        <div class="blog-card__header">
+                                            <div class="blog-card__cat-links">
+                                                <a href="{% url 'blog' %}?category={{ post.category|urlencode }}">{{ post.category }}</a>
+                                            </div>
+                                            <h3 class="blog-card__title">
+                                                <a href="{% url 'blog' %}{{ post.slug }}">{{ post.title }}</a>
+                                            </h3>
+                                        </div>
+                                        <div class="blog-card__text">
+                                            <p>{{ post.content|truncatewords:50 }}</p>
+                                        </div>
+                                    </div> <!-- end blog-card -->
+                                    {% endfor %}
+        
+                                </div> <!-- grid-list-items -->
+                            <!-- </div>     -->
+
+                        </div> <!-- end grid-block-->
+                    </div> <!-- end row -->
+
+                    <!-- pagination -->
+                    {% if posts.paginator.num_pages > 1 %}
+                    <div class="row navigation pagination">
+                        <div class="column xl-12">
+                            <nav class="pgn" role="navigation">
+                                <ul>
+                                    {% if posts.has_previous %}
+                                    <li>
+                                        <a class="pgn__prev" href="?page={{ posts.previous_page_number }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"/></svg>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                    
+                                    {% for num in posts.paginator.page_range %}
+                                        {% if posts.number == num %}
+                                            <li><span class="pgn__num current">{{ num }}</span></li>
+                                        {% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+                                            <li><a class="pgn__num" href="?page={{ num }}">{{ num }}</a></li>
+                                        {% elif num == 1 or num == posts.paginator.num_pages %}
+                                            <li><a class="pgn__num" href="?page={{ num }}">{{ num }}</a></li>
+                                        {% elif num == posts.number|add:'-3' or num == posts.number|add:'3' %}
+                                            <li><span class="pgn__num dots">…</span></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    
+                                    {% if posts.has_next %}
+                                    <li>
+                                        <a class="pgn__next" href="?page={{ posts.next_page_number }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"/></svg>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        </div> <!-- end column -->
+                    </div> <!-- end pagination -->
+                    {% endif %}
+
+               </section>
+
+        </section> <!-- s-content-->
+
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}{% endblock %}

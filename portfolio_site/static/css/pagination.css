@@ -1,0 +1,84 @@
+/* pagination styles
+ * ------------------------------------------------------------------- */
+.navigation.pagination {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.pgn {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pgn ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pgn li {
+    margin: 0;
+    padding: 0;
+}
+
+.pgn__num,
+.pgn__prev,
+.pgn__next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.6rem;
+    height: 3.6rem;
+    padding: 0 0.4rem;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #343D35;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.pgn__num:hover,
+.pgn__prev:hover,
+.pgn__next:hover {
+    background-color: #EA9010;
+    border-color: #EA9010;
+    color: #fff;
+}
+
+.pgn__num.current {
+    background-color: #EA9010;
+    border-color: #EA9010;
+    color: #fff;
+}
+
+.pgn__prev svg,
+.pgn__next svg {
+    width: 2rem;
+    height: 2rem;
+    stroke: currentColor;
+}
+
+.pgn__num.dots {
+    border: none;
+    padding: 0 0.8rem;
+}
+
+@media screen and (max-width: 600px) {
+    .pgn__num,
+    .pgn__prev,
+    .pgn__next {
+        min-width: 3.2rem;
+        height: 3.2rem;
+    }
+    
+    .pgn__num.dots {
+        padding: 0 0.4rem;
+    }
+}
