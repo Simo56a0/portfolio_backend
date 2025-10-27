@@ -27,28 +27,53 @@
                         <div class="column xl-6 lg-12">
                             <h2 class="text-display-title">Hi I'm HORATIO</h2>
                              <h2 class="text-display-title"> An inspiring headline <br> about yourself.</h2>
+                             <p class="attention-getter">
+                            clients i have had the pleasure to work with
+                            </p>
                         </div>
                         <div class="column xl-6 lg-12 u-flexitem-x-right">
                             <figure class="page-media">
                                     <img src="{% static 'images/thumbs/about/about-1200.jpg' %}" alt="About">
                                 </figure>
+                                
                         </div>                       
-                    </div>  <!-- pageintro --> 
+                    
+                    </div>
+                <div class="max-w-6xl mx-auto py-12 text-center">
+    
 
-                        <div class="s-intro__scroll-down">
-                            <a href="{% url 'about' %}" class="smoothscroll">
-                                <div class="scroll-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#97b34a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="7 13 12 18 17 13"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
-                                </div>
-                                <span>Scroll for more</span>
-                            </a>
-                        </div> <!-- s-intro__scroll-down -->
-                        
-                    </div> <!-- s-intro__content-inner -->
+    <div class="clients-slider mt-12 overflow-hidden relative">
+      <div class="clients-track flex items-center justify-center gap-12">
+        <!-- Repeat logos twice for seamless looping -->
+        <img src="{% static 'images/clients/flash.svg' %}" alt="Flash" class="h-10 w-auto">
+        <img src="{% static 'images/clients/rise.svg' %}" alt="Rise" class="h-10 w-auto">
+        <img src="{% static 'images/clients/cactus.svg' %}" alt="Cactus" class="h-10 w-auto">
+        <img src="{% static 'images/clients/pinpoint.svg' %}" alt="Pinpoint" class="h-10 w-auto">
+        <img src="{% static 'images/clients/proline.svg' %}" alt="Proline" class="h-10 w-auto">
+        <img src="{% static 'images/clients/vision.svg' %}" alt="Vision" class="h-10 w-auto">
+        <img src="{% static 'images/clients/volume.svg' %}" alt="Volume" class="h-10 w-auto">
+        <img src="{% static 'images/clients/hitech.svg' %}" alt="Hitech" class="h-10 w-auto">
+        <img src="{% static 'images/clients/terra.svg' %}" alt="Terra" class="h-10 w-auto">
+        <img src="{% static 'images/clients/chain.svg' %}" alt="Chain" class="h-10 w-auto">
 
-                
-
+        <!-- duplicate set for infinite loop -->
+        <img src="{% static 'images/clients/flash.svg' %}" alt="Flash" class="h-10 w-auto">
+        <img src="{% static 'images/clients/rise.svg' %}" alt="Rise" class="h-10 w-auto">
+        <img src="{% static 'images/clients/cactus.svg' %}" alt="Cactus" class="h-10 w-auto">
+        <img src="{% static 'images/clients/pinpoint.svg' %}" alt="Pinpoint" class="h-10 w-auto">
+        <img src="{% static 'images/clients/proline.svg' %}" alt="Proline" class="h-10 w-auto">
+        <img src="{% static 'images/clients/vision.svg' %}" alt="Vision" class="h-10 w-auto">
+        <img src="{% static 'images/clients/volume.svg' %}" alt="Volume" class="h-10 w-auto">
+        <img src="{% static 'images/clients/hitech.svg' %}" alt="Hitech" class="h-10 w-auto">
+        <img src="{% static 'images/clients/terra.svg' %}" alt="Terra" class="h-10 w-auto">
+        <img src="{% static 'images/clients/chain.svg' %}" alt="Chain" class="h-10 w-auto">
+      </div>
+    </div>
+  </div>
             </section> <!-- end s-intro -->
+<!--<section id="clients" class="s-clients bg-gray-50">
+  
+</section>-->
 
             <!-- about
             ----------------------------------------------- -->
@@ -207,40 +232,7 @@
            
 
 
-<section id="clients" class="s-clients bg-gray-50">
-  <div class="max-w-6xl mx-auto py-12 text-center">
-    <h2 class="text-2xl font-bold">Clients</h2>
-    <p class="mt-2 text-gray-600">I have had the privilege of working with these incredible brands.</p>
 
-    <div class="clients-slider mt-12 overflow-hidden relative">
-      <div class="clients-track flex items-center justify-center gap-12">
-        <!-- Repeat logos twice for seamless looping -->
-        <img src="{% static 'images/clients/flash.svg' %}" alt="Flash" class="h-10 w-auto">
-        <img src="{% static 'images/clients/rise.svg' %}" alt="Rise" class="h-10 w-auto">
-        <img src="{% static 'images/clients/cactus.svg' %}" alt="Cactus" class="h-10 w-auto">
-        <img src="{% static 'images/clients/pinpoint.svg' %}" alt="Pinpoint" class="h-10 w-auto">
-        <img src="{% static 'images/clients/proline.svg' %}" alt="Proline" class="h-10 w-auto">
-        <img src="{% static 'images/clients/vision.svg' %}" alt="Vision" class="h-10 w-auto">
-        <img src="{% static 'images/clients/volume.svg' %}" alt="Volume" class="h-10 w-auto">
-        <img src="{% static 'images/clients/hitech.svg' %}" alt="Hitech" class="h-10 w-auto">
-        <img src="{% static 'images/clients/terra.svg' %}" alt="Terra" class="h-10 w-auto">
-        <img src="{% static 'images/clients/chain.svg' %}" alt="Chain" class="h-10 w-auto">
-
-        <!-- duplicate set for infinite loop -->
-        <img src="{% static 'images/clients/flash.svg' %}" alt="Flash" class="h-10 w-auto">
-        <img src="{% static 'images/clients/rise.svg' %}" alt="Rise" class="h-10 w-auto">
-        <img src="{% static 'images/clients/cactus.svg' %}" alt="Cactus" class="h-10 w-auto">
-        <img src="{% static 'images/clients/pinpoint.svg' %}" alt="Pinpoint" class="h-10 w-auto">
-        <img src="{% static 'images/clients/proline.svg' %}" alt="Proline" class="h-10 w-auto">
-        <img src="{% static 'images/clients/vision.svg' %}" alt="Vision" class="h-10 w-auto">
-        <img src="{% static 'images/clients/volume.svg' %}" alt="Volume" class="h-10 w-auto">
-        <img src="{% static 'images/clients/hitech.svg' %}" alt="Hitech" class="h-10 w-auto">
-        <img src="{% static 'images/clients/terra.svg' %}" alt="Terra" class="h-10 w-auto">
-        <img src="{% static 'images/clients/chain.svg' %}" alt="Chain" class="h-10 w-auto">
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <section id="journal" class="s-journal bg-white">
